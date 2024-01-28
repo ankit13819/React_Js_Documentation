@@ -1,7 +1,8 @@
-import React from "react";
-import { FirstName, LastName, MiddleName } from "./ContextApi";
+import React, { useContext } from "react";
+import { FirstName, LastName, MiddleName, GetNumber } from "./ContextApi";
 
 const ComC = () => {
+  const getData = useContext(GetNumber);
   return (
     <>
       <FirstName.Consumer>
@@ -25,6 +26,7 @@ const ComC = () => {
           );
         }}
       </FirstName.Consumer>
+      <h1>The Number is {getData}</h1>
     </>
   );
 };

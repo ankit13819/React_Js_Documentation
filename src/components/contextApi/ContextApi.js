@@ -10,6 +10,7 @@ import ComA from "./ComA";
 const FirstName = createContext();
 const LastName = createContext();
 const MiddleName = createContext();
+const GetNumber = createContext();
 
 const ContextApi = () => {
   return (
@@ -17,7 +18,9 @@ const ContextApi = () => {
       <FirstName.Provider value={"Ankit"}>
         <LastName.Provider value={"Gupta"}>
           <MiddleName.Provider value={"Kumar"}>
-            <ComA />
+            <GetNumber.Provider value={34}>
+              <ComA />
+            </GetNumber.Provider>
           </MiddleName.Provider>
         </LastName.Provider>
       </FirstName.Provider>
@@ -26,4 +29,4 @@ const ContextApi = () => {
 };
 
 export default ContextApi;
-export { FirstName, LastName, MiddleName };
+export { FirstName, LastName, MiddleName, GetNumber };
